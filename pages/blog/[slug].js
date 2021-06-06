@@ -4,17 +4,17 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 import marked from 'marked'
 
-import Layout from '../../components/Layout'
-import CategoryLabel from '../../components/CategoryLabel'
+import Layout from '@/components/Layout'
+import CategoryLabel from '@/components/CategoryLabel'
 
 export default function PostPage({ frontmatter: { title, author, author_image, category, cover_image, date }, content, slug }) {
   return (
     <Layout title={title}>
       <Link href='/blog'>Go Back</Link>
 
-      <div className='w-full px-10 py-6 bg-white rounded-lg shadow-md mt-6'>
-        <div className='flex justify-between items-center mt-4'>
-          <h1 className='text-5xl mb-7'>{title}</h1>
+      <div className='w-full px-3 md:px-10 py-6 bg-white rounded-lg shadow-md mt-6'>
+        <div className='flex justify-between items-center mt-4 mb-7'>
+          <h1 className='text-2xl md:text-5xl'>{title}</h1>
           
           <CategoryLabel>
             {category}
@@ -44,7 +44,7 @@ export default function PostPage({ frontmatter: { title, author, author_image, c
         </div>
 
         <div className='blog-text mt-2'>
-          <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+          <div dangerouslySetInnerHTML={{__html: marked(content) }}></div>
         </div>
       </div>
     </Layout>
