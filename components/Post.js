@@ -5,7 +5,7 @@ import CategoryLabel from './CategoryLabel'
 
 export default function Post({ post, compact }) {
   return (
-    <div className='w-full px-10 py-6 bg-white rounded-lg shadow-md mt-6'>
+    <div className='w-full px-3 py-6 bg-white rounded-lg shadow-md mt-6'>
       {!compact && (
         <Image 
           src={post.frontmatter.cover_image} 
@@ -24,9 +24,9 @@ export default function Post({ post, compact }) {
         <CategoryLabel>{post.frontmatter.category}</CategoryLabel>
       </div>
 
-      <div className='mt-2'>
+      <div className='mt-3'>
         <Link href={`/blog/${post.slug}`}>
-          <a className='text-2xl text-gray-700 font-bold hover:underline'>
+          <a className='text-xl text-gray-700 font-bold hover:underline'>
             {post.frontmatter.title}
           </a>
         </Link>
